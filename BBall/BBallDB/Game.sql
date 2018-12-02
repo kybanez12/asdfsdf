@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Game]
+(
+	[Id] INT IDENTITY (1,1) NOT NULL,
+	[DateAndTime] DATE NOT NULL,
+	[Venue] NVARCHAR (100) NOT NULL,
+	[Amount] DECIMAL(15,2),
+	[PersonPaying] INT,
+	CONSTRAINT PK_GAME PRIMARY KEY (Id),
+	CONSTRAINT FK_PAYER FOREIGN KEY (PersonPaying) REFERENCES Player (Id)
+)
